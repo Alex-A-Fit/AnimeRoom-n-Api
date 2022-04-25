@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class Attributes(
     val abbreviatedTitles: List<String> = listOf(""),
     val ageRating: String = "",
+    val ageRatingGuide: String = "",
     val averageRating: String = "",
     val canonicalTitle: String = "",
     val coverImage: CoverImage,

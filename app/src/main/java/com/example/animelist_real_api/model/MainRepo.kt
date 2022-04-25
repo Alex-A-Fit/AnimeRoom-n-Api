@@ -3,6 +3,7 @@ package com.example.animelist_real_api.model
 import com.example.animelist_real_api.model.api.ApiService
 import com.example.animelist_real_api.model.apiModels.Animes
 import com.example.animelist_real_api.model.apiModels.Data
+import com.example.animelist_real_api.model.room.AnimeFavoritesDatabase
 import com.example.animelist_real_api.util.Resource
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
@@ -15,6 +16,19 @@ object MainRepo {
     suspend fun getAnime() = withContext(Dispatchers.IO){
         return@withContext try{
             val response = apiService.fetchAnimes()
+            if(response.isSuccessful){
+                Resource.Success(response.body()!!.animeList)
+            }else{
+                Resource.Error("Something went Wrong! D:")
+            }
+        } catch (e: Exception){
+            e.localizedMessage?.let { Resource.Error(it) }
+        }
+    }
+
+    suspend fun getTrendingAnime() = withContext(Dispatchers.IO){
+        return@withContext try{
+            val response = apiService.fetchTrendingAnimes()
             if(response.isSuccessful){
                 Resource.Success(response.body()!!.animeList)
             }else{

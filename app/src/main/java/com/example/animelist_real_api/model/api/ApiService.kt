@@ -23,6 +23,9 @@ interface ApiService {
     // data class AnimeMeta(val count: Int)
 
 
+    @GET("trending/anime")
+    suspend fun fetchTrendingAnimes(): Response<AnimeResponse>
+
     @GET("anime")
     suspend fun fetchAnimes(): Response<AnimeResponse>
 

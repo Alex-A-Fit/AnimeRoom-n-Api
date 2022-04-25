@@ -20,6 +20,8 @@
             <ImageView
                 android:id="@+id/CoverArt_IV"
                 android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
                 android:layout_height="200dp" />
 
             <TextView
@@ -142,10 +144,12 @@
                         android:id="@+id/Content_Rating_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="22dp"
                         android:fontFamily="@font/alata"
                         android:padding="10dp"
                         android:text="PG-13"
+                        android:gravity="center"
+                        android:textAlignment="center"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/textView3"

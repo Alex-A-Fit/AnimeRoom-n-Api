@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_introAnimeListFragment_to_animeDetailsFragment"
             app:destination="@id/animeDetailsFragment" />
+        <action
+            android:id="@+id/action_introAnimeListFragment_to_favoriteAnimeFragment"
+            app:destination="@id/favoriteAnimeFragment" />
     </fragment>
     <fragment
         android:id="@+id/animeDetailsFragment"
@@ -22,5 +25,14 @@
         <argument
             android:name="id"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteAnimeFragment"
+        android:name="com.example.animelist_real_api.view.FavoriteAnimeFragment"
+        android:label="fragment_favorite_anime"
+        tools:layout="@layout/fragment_favorite_anime" >
+        <action
+            android:id="@+id/action_favoriteAnimeFragment_to_animeDetailsFragment"
+            app:destination="@id/animeDetailsFragment" />
     </fragment>
 </navigation>
